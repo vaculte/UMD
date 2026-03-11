@@ -1,0 +1,104 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1e1e1e;
+    --accent-color: #000000;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --font-main: 'Montserrat', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --accent-color: #ffffff;
+    --nav-bg: rgba(18,18,18,0.9);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    background-color: var(--nav-bg);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(128,128,128,0.2);
+    transition: background-color var(--transition-speed) ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200;
+    margin: 0 auto;
+}
+
+nav div strong {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+#theme-toggle {
+    background-color: var(--accent-color);
+    color: var(--nav-bg);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#theme-toggle:active {
+    transform: scale(0.95);
+}
