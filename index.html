@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -23,6 +25,7 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#installation">Installation</a></li>
                 <li><a href="https://github.com/Magerko/universal-media-downloader/blob/main/README.md" target="_blank" rel="noopener noreferrer">Documentation</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
             <button type="button" id="theme-toggle">Theme</button>
         </nav>
@@ -32,37 +35,175 @@
         <section id="hero">
             <h1>UNIVERSAL MEDIA DOWNLOADER</h1>
             <p>Effortlessly download videos and audio from popular web resources. Minimalist. Fast. Open Source.</p>
-            <a href="https://github.com/Magerko/universal-media-downloader/" target="_blank" rel="noopener noreferrer" class="btn-primary">DOWNLOAD LATEST</a>
+            <a href="#installation" class="btn-primary">DOWNLOAD LATEST</a>
         </section>
 
         <section id="features">
             <h2>Key Features</h2>
             <div class="features-grid">
                 <article>
+                    <i data-feather="download"></i>
                     <h3>Multi-site Support</h3>
                     <p>YouTube, Twitch, Instagram & More</p>
                 </article>
 
                 <article>
+                    <i data-feather="code"></i>
                     <h3>Open Source</h3>
                     <p>Transparent, collaborative, community-driven development</p>
                 </article>
 
                 <article>
+                    <i data-feather="zap"></i>
                     <h3>Fast Performance</h3>
                     <p>Optimized for speed, low resource usage</p>
                 </article>
             </div>
         </section>
 
+        <section id="how-it-works">
+        <p> One app. Any platform. Any format. </p>
+
+            <div class="step">
+                <h4>Step 1 — Copy the link</h4>
+                <p> Open any supported platform — YouTube, Twitch, Instagram, TikTok, and more. Copy the URL from your browser. </p>
+            </div>
+
+            <div class="step">
+                <h4>Step 2 — Paste the link</h4>
+                <p> Launch the app and paste the link into the input field. UMD will instantly detect the source. </p>
+            </div>
+            
+            <div class="step">
+                <h4> Step 3 — Choose format & quality</h4>
+                <p> Select your desired format (MP4, MP3, etc.) and quality (1080p, 720p, audio bitrate). </p>
+            </div>
+
+            <div class="step">
+                <h4>Step 4 — Download</h4>
+                <p> Click the download button. UMD will fetch the media and save it to your device. </p>
+            </div>
+
+        </section>
+
         <section id="installation">
             <h2>Installation Guide</h2>
-            <p>Here will be the command line instructions.</p>
+
+            <div class="os-card">
+
+                <div class="os-card-header">
+                    <i class="devicon-windows8-original"></i>
+                    <h3>Windows</h3>
+                </div>
+
+                <div class="os-card-body">
+                    <h4>Step 1 — Install Deno</h4>
+                    <pre><code>irm https://deno.land/install.ps1 | iex</code></pre>
+
+                    <h4>Step 2 — Install FFmpeg</h4>
+                    <pre><code>winget install ffmpeg</code></pre>
+
+                    <h4>Step 3 — Clone & Setup</h4>
+                    <pre><code>git clone https://github.com/Magerko/universal-media-downloader.git
+cd universal-media-downloader
+python -m venv .venv
+.venv\Scripts\activate</code></pre>
+
+                    <h4>Step 4 — Install & Run</h4>
+                    <pre><code>pip install -r requirements.txt
+python main.py</code></pre>
+
+                </div>
+            </div>
+
+            <div class="os-card">
+
+                <div class="os-card-header">
+                    <i class="devicon-apple-original"></i>
+                    <h3>macOS</h3>
+                </div>
+
+                <div class="os-card-body">
+                    <h4>Step 1 — Install Deno</h4>
+                    <pre><code>curl -fsSL https://deno.land/install.sh | sh</code></pre>
+
+                    <h4>Step 2 — Install FFmpeg</h4>
+                    <pre><code>brew install ffmpeg</code></pre>
+
+                    <h4>Step 3 — Clone & Setup</h4>
+                    <pre><code>git clone https://github.com/Magerko/universal-media-downloader.git
+cd universal-media-downloader
+python3 -m venv .venv
+source .venv/bin/activate</code></pre>
+
+                    <h4>Step 4 — Install & Run</h4>
+                    <pre><code>pip install -r requirements.txt
+python3 main.py</code></pre>
+
+                </div>
+            </div>
+
+            <div class="os-card">
+
+                <div class="os-card-header">
+                    <i class="devicon-linux-plain"></i>
+                    <h3>Linux</h3>
+
+                </div>
+                <div class="os-card-body">
+                    <h4>Step 1 — Install Deno</h4>
+                    <pre><code>curl -fsSL https://deno.land/install.sh | sh</code></pre>
+
+                    <h4>Step 2 — Install FFmpeg</h4>
+                    <p>Debian / Ubuntu:</p>
+                    <pre><code>sudo apt install ffmpeg</code></pre>
+
+                    <p>Fedora:</p>
+                    <pre><code>sudo dnf install ffmpeg</code></pre>
+
+                    <p>Arch:</p>
+                    <pre><code>sudo pacman -S ffmpeg</code></pre>
+
+                    <h4>Step 3 — Clone & Setup</h4>
+                    <pre><code>git clone https://github.com/Magerko/universal-media-downloader.git
+cd universal-media-downloader
+python3 -m venv .venv
+source .venv/bin/activate</code></pre>
+
+                    <h4>Step 4 — Install & Run</h4>
+                    <pre><code>pip install -r requirements.txt
+python3 main.py</code></pre>
+
+                </div>
+            </div>
         </section>
 
         <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            <p>Here will be the accordion FAQ.</p>
+            <details>
+                <summary> What platforms are supported? </summary>
+                <p>YouTube, TikTok, Instagram, VK, RuTube, Twitch, Kick, Kinopoisk, and many more.</p>
+            </details>
+
+            <details>
+                <summary> What video quality and formats are available? </summary>
+                <p>Quality settings are configured individually per platform. Supported formats include MP4, WEBM, and MP3 for audio extraction.</p>
+            </details>
+
+            <details>
+                <summary> Does the app support subtitles? </summary>
+                <p>Yes. You can download subtitles in English, Russian, and Ukrainian.</p>
+            </details>
+
+            <details>
+                <summary> What languages does the app support? </summary>
+                <p>The app interface is available in English, Russian, and Ukrainian.</p>
+            </details>
+
+            <details>
+                <summary> Can I download audio only? </summary>
+                <p>Yes. The app supports audio extraction and converts it to MP3 at 192kbps.</p>
+            </details>
+
         </section>
     </main>
 
@@ -73,5 +214,6 @@
         </ul>
     </footer>
 
+    <script>feather.replace();</script>
 </body>
 </html>
