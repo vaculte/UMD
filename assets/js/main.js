@@ -1,9 +1,7 @@
-// ─── AURORA BLOB — добавляем третье цветное пятно в DOM ───
 const blob = document.createElement('div');
 blob.classList.add('aurora-blob');
 document.body.appendChild(blob);
 
-// ─── THEME TOGGLE ───
 const toggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
@@ -20,14 +18,10 @@ toggle.addEventListener('click', () => {
     updateToggleIcon(next);
 });
 
-// Меняем иконку кнопки: луна для светлой темы, солнце для тёмной
 function updateToggleIcon(theme) {
     toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
 }
 
-// ─── OS CARD ACCORDION ───
-// При клике на шапку карточки — открываем/закрываем её
-// Остальные карточки закрываем
 document.querySelectorAll('.os-card-header').forEach(header => {
     header.addEventListener('click', () => {
         const card = header.closest('.os-card');
@@ -37,9 +31,6 @@ document.querySelectorAll('.os-card-header').forEach(header => {
     });
 });
 
-// ─── SCROLL REVEAL ───
-// Следим за элементами с классом .reveal
-// Когда они попадают в зону видимости — добавляем класс .visible
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -48,8 +39,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// ─── COPY BUTTONS ───
-// Автоматически добавляем кнопку Copy к каждому блоку с кодом
 document.querySelectorAll('pre').forEach(pre => {
     const btn = document.createElement('button');
     btn.textContent = 'Copy';
