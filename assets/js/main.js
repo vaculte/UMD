@@ -5,6 +5,7 @@ document.body.appendChild(blob);
 const toggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
+// Загружаем сохранённую тему или светлую по умолчанию
 const saved = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', saved);
 updateToggleIcon(saved);
