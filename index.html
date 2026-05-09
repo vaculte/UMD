@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="docs/images/logo.png">
     <title>Universal Media Downloader</title>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,16 +20,17 @@
     <header>
         <nav>
             <div>
-                <strong><a href="#hero">UMD</a></strong>
+                <a href="#hero"><img src="docs/images/logo.png" alt="UMD Logo" style="height: 36px; width: auto; display: block;"></a>
             </div>
             <ul>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">Process</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
                 <li><a href="#installation">Installation</a></li>
                 <li><a href="https://github.com/Magerko/universal-media-downloader/blob/main/README.md" target="_blank" rel="noopener noreferrer">Documentation</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <button type="button" id="theme-toggle"></button>
+            <button type="button" id="theme-toggle" aria-label="Toggle dark/light theme"></button>
         </nav>
     </header>
 
@@ -106,7 +108,37 @@
 
     </section>
 
-        <section id="installation">
+    <section id="screenshots" aria-label="Application screenshots">
+        <h2>Screenshots</h2>
+        <div class="screenshots-grid">
+            <article class="screenshot-card reveal">
+                <img src="docs/images/screenshot-1.png" alt="UMD main interface — empty state with link input and supported platforms list" loading="lazy">
+                <p class="screenshot-caption">Main interface — paste a link and start downloading</p>
+            </article>
+            <article class="screenshot-card reveal">
+                <img src="docs/images/screenshot-2.png" alt="UMD downloads queue showing a pending YouTube video with thumbnail preview" loading="lazy">
+                <p class="screenshot-caption">Downloads queue — add and manage your links</p>
+            </article>
+            <article class="screenshot-card reveal">
+                <img src="docs/images/screenshot-3.png" alt="UMD settings panel with theme selector, download path, cookies and per-platform quality options" loading="lazy">
+                <p class="screenshot-caption">Settings — configure quality and preferences</p>
+            </article>
+            <article class="screenshot-card reveal">
+                <img src="docs/images/screenshot-4.png" alt="UMD about page showing app version 1.1, author name and Telegram support link" loading="lazy">
+                <p class="screenshot-caption">About — app info and support links</p>
+            </article>
+            <article class="screenshot-card reveal">
+                <img src="docs/images/screenshot-5.png" alt="UMD download history table with completed, error and stopped entries showing date, title, platform and status" loading="lazy">
+                <p class="screenshot-caption">History — track all your downloads</p>
+            </article>
+            <article class="screenshot-card reveal">
+                <img src="docs/images/screenshot-6.png" alt="UMD parallel downloads in progress showing two YouTube videos with progress bars, speed and ETA" loading="lazy">
+                <p class="screenshot-caption">Parallel downloads — multiple files at once</p>
+            </article>
+        </div>
+    </section>
+
+        <section id="installation" aria-label="Installation instructions">
             <h2>How to install?</h2>
 
             <div class="os-card">
@@ -201,7 +233,7 @@ python3 main.py</code></pre>
             </div>
         </section>
 
-        <section id="faq">
+        <section id="faq" aria-label="Frequently asked questions">
             <h2> FAQ </h2>
             <div class="faq-list">
                 <details>

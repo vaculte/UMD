@@ -55,9 +55,49 @@ document.querySelectorAll('pre').forEach(pre => {
         navigator.clipboard.writeText(code).then(() => {
             btn.textContent = 'Copied!';
             setTimeout(() => btn.textContent = 'Copy', 2000);
+        }).catch(() => {
+            btn.textContent = 'Failed';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
         });
     });
 
     pre.style.position = 'relative';
     pre.appendChild(btn);
+});
+
+// ─── LIGHTBOX для скриншотов ───
+const lightbox = document.createElement('div');
+lightbox.classList.add('lightbox');
+lightbox.setAttribute('role', 'dialog');
+lightbox.setAttribute('aria-modal', 'true');
+lightbox.setAttribute('aria-label', 'Image preview');
+lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close preview">&times;</button><img src="" alt="">';
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector('img');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.screenshot-card img').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
 });
