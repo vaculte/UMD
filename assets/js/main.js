@@ -61,3 +61,36 @@ document.querySelectorAll('pre').forEach(pre => {
     pre.style.position = 'relative';
     pre.appendChild(btn);
 });
+
+// ─── LIGHTBOX для скриншотов ───
+const lightbox = document.createElement('div');
+lightbox.classList.add('lightbox');
+lightbox.innerHTML = '<button class="lightbox-close">&times;</button><img src="" alt="">';
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector('img');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.screenshot-card img').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
