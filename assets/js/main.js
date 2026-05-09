@@ -55,6 +55,9 @@ document.querySelectorAll('pre').forEach(pre => {
         navigator.clipboard.writeText(code).then(() => {
             btn.textContent = 'Copied!';
             setTimeout(() => btn.textContent = 'Copy', 2000);
+        }).catch(() => {
+            btn.textContent = 'Failed';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
         });
     });
 
@@ -65,7 +68,10 @@ document.querySelectorAll('pre').forEach(pre => {
 // ─── LIGHTBOX для скриншотов ───
 const lightbox = document.createElement('div');
 lightbox.classList.add('lightbox');
-lightbox.innerHTML = '<button class="lightbox-close">&times;</button><img src="" alt="">';
+lightbox.setAttribute('role', 'dialog');
+lightbox.setAttribute('aria-modal', 'true');
+lightbox.setAttribute('aria-label', 'Image preview');
+lightbox.innerHTML = '<button class="lightbox-close" aria-label="Close preview">&times;</button><img src="" alt="">';
 document.body.appendChild(lightbox);
 
 const lightboxImg = lightbox.querySelector('img');
@@ -76,6 +82,7 @@ function openLightbox(src, alt) {
     lightboxImg.alt = alt;
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
 }
 
 function closeLightbox() {

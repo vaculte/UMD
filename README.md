@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/logo.png" alt="UMD Logo" width="120">
+  <img src="docs/images/logo.png" alt="UMD Logo" width="120">
 </p>
 
 <h1 align="center">Universal Media Downloader</h1>
